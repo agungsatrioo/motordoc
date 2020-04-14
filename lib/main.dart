@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:motordoc/src/common/splash.dart';
+import 'src/ui/pages/page_splash.dart';
 
 void main(){
   runApp(MaterialApp(
