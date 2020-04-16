@@ -1,7 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:motordoc/src/page/login/login.dart';
+
+import 'package:motordoc/src/ui/pages/login/login.dart';
+
+
 
 class SplashScreen extends StatefulWidget{
   @override
