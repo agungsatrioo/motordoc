@@ -30,7 +30,7 @@ dependencies:
   line_icons: ^0.2.0
   flutter_local_notifications: ^1.4.1
   dartx: ^0.3.0
-  rxdart: ^0.24.0
+  rxdart: ^0.23.0
   theme_provider: ^0.3.3
   shared_preferences: ^0.5.6+3
   path_provider: ^1.6.5
