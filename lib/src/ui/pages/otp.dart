@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:motordoc/src/ui/pages/login/login.dart';
+import 'package:motordoc/src/ui/pages/register.dart';
 
 class OTP extends StatefulWidget{
   @override
@@ -15,7 +16,7 @@ class _otp extends State<OTP>{
         resizeToAvoidBottomPadding: false,
         body: Container(
           padding: const EdgeInsets.only(right: 38, left: 38),
-          child: ListView(
+          child: Column(
 
             children: <Widget>[
               Padding(
@@ -31,7 +32,7 @@ class _otp extends State<OTP>{
                 child: Padding(
                   padding: EdgeInsets.only(top: 38),
                   child: Text(
-                    "Masukan 6 angka kode yang telah dikirim via",
+                    "Masukan 6 angka kode",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -44,7 +45,7 @@ class _otp extends State<OTP>{
                   child: Padding(
                     padding: EdgeInsets.only(top: 2),
                     child: Text(
-                      "SMS ke +62 85xxxxxxxxxx",
+                      "yang telah dikirim via SMS ke +62 8xxxxxxxxxx",
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontWeight: FontWeight.normal,
@@ -104,9 +105,9 @@ class _otp extends State<OTP>{
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 80),
+                padding: EdgeInsets.only(top: 100),
                 child: Text(
-                  "Salah nomor ponsel ? KLIK UBAH NOMOR DI ATAS",
+                  "Salah nomor ponsel ? Klik ubah nomor di atas",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 11,
@@ -122,7 +123,13 @@ class _otp extends State<OTP>{
                   color: Color(0xFF3688DE),
                   textColor: Colors.white,
                   padding: EdgeInsets.only(right: 115, left: 115, top: 9, bottom: 9),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context)=> Regist()
+                        )
+                    );
+                  },
                   child: const Text(
                       'KONFIRMASI',
                       style: TextStyle()
