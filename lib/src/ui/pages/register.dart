@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:motordoc/src/ui/pages/login/login.dart';
+import 'file:///G:/KERJAPRAKTEK/Flutter/motordoc/lib/src/ui/pages/home/bottom_nav.dart';
+
 
 class Regist extends StatefulWidget{
   @override
@@ -84,7 +85,13 @@ class _regist extends State<Regist>{
                   color: Color(0xFF3688DE),
                   textColor: Colors.white,
                   padding: EdgeInsets.only(right: 115, left: 115, top: 9, bottom: 9),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context)=> BottomNav()
+                        )
+                    );
+                  },
                   child: const Text(
                       'SIMPAN',
                       style: TextStyle()
