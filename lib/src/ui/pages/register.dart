@@ -4,12 +4,12 @@ import 'package:flutter/widgets.dart';
 import 'file:///G:/KERJAPRAKTEK/Flutter/motordoc/lib/src/ui/pages/home/bottom_nav.dart';
 
 
-class Regist extends StatefulWidget{
+class RegistPage extends StatefulWidget{
   @override
-  _regist createState() => _regist();
+  _RegistPageState createState() => _RegistPageState();
 }
 
-class _regist extends State<Regist>{
+class _RegistPageState extends State<RegistPage>{
   @override
   Widget build(BuildContext context){
     return Scaffold(

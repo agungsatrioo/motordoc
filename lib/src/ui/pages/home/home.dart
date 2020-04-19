@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'file:///G:/KERJAPRAKTEK/Flutter/motordoc/lib/src/ui/pages/home/chat.dart';
-import 'file:///G:/KERJAPRAKTEK/Flutter/motordoc/lib/src/ui/pages/home/person.dart';
 
 class HomePage extends StatefulWidget{
   @override
-  _home createState() => _home();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _home extends State<HomePage>{
+class _HomePageState extends State<HomePage>{
 
   @override
   Widget build(BuildContext context){

@@ -78,7 +78,7 @@ class _LoginPage extends State<LoginPage>{
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                            builder: (context)=> OTP()
+                            builder: (context)=> OtpPage()
                         )
                     );
                   },

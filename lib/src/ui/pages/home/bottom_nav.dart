@@ -9,8 +9,8 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int _selectedIndex = 0;
-  final _widgetOptions = <Widget>[
+  int _selectedIndex = 1;
+  final _widgetOptions = [
     ChatPage(),
     HomePage(),
     PersonPage(),
@@ -25,25 +25,22 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _widgetOptions,
-        children: widget.screens,
-      ),
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
-            title: Text(''),
+            title: Text('Chat'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text(''),
+            title: Text('Home'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text(''),
+            title: Text('Person'),
           ),
         ],
         currentIndex: _selectedIndex,

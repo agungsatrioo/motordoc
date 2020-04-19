@@ -4,12 +4,12 @@ import 'package:flutter/widgets.dart';
 import 'package:motordoc/src/ui/pages/login/login.dart';
 import 'package:motordoc/src/ui/pages/register.dart';
 
-class OTP extends StatefulWidget{
+class OtpPage extends StatefulWidget{
   @override
-  _otp createState() => _otp();
+  _OtpPageState createState() => _OtpPageState();
 }
 
-class _otp extends State<OTP>{
+class _OtpPageState extends State<OtpPage>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -126,7 +126,7 @@ class _otp extends State<OTP>{
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                            builder: (context)=> Regist()
+                            builder: (context)=> RegistPage()
                         )
                     );
                   },
