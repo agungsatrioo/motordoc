@@ -58,6 +58,94 @@ class _HomePageState extends State<HomePage>{
                 ),
                 width: 360,
                 height: 38,
+                child: Row(
+                  children:<Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Icon(
+                        Icons.search,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(7.0),
+                      child: Text(
+                        "Ada masalah apa dengan motormu?",
+                        style: TextStyle(
+                          color: Color (0xFFC1C0C0),
+                        ),
+                      ),
+                    ),
+                  ]
+                ),
+              ),
+              Container(
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 14, right: 23.0),
+                      child: Image.asset(
+                        "assets/images/mechanic.png",
+//                          width: 99.0,
+                          height: 160.0,
+                      ),
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Text(
+                              "Sabtu, 4 April 2020",
+                              style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.w100,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5.0),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Hai nama",
+                              style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.w100,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5.0),
+                          child: Text(
+                            "Ada yang bisa kami bantu?",
+                            style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w100,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Stack(
+
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    width: 200,
+                    height: 200,
+                  ),
+                ],
               ),
             ],
           ),
