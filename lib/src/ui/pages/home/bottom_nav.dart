@@ -47,7 +47,7 @@ class _BottomNavState extends State<BottomNav> {
         backgroundColor: Color(0xFF3688DE),
         unselectedItemColor: Colors.white,
         selectedItemColor: Colors.white,
-        iconSize: 24,
+        iconSize: 30,
         onTap: _onItemTapped,
       ),
     );
