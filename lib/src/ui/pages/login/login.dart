@@ -1,96 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:motordoc/src/ui/pages/otp.dart';
+import 'package:motordoc/src/ui/widgets/widget_button.dart';
 
 class LoginPage extends StatefulWidget{
-  @override
-  _LoginPage createState() => _LoginPage();
+  @override createState() => _LoginPageState();
 }
 
-class _LoginPage extends State<LoginPage>{
+class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _phoneNumberField = TextEditingController();
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomPadding: false,
-      body: Container(
-        padding: const EdgeInsets.only(right: 38, left: 38),
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: 109),
-                child: Image.asset(
-                  "assets/images/logo.png",
-                  width : 113.0,
-                  height: 113.0,
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(top: 38),
-                  child: Text(
-                    "Masukan nomor telepon",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 2),
-                    child: Text(
-                      "Untuk memulai",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: Center(
+                      child: Image.asset(
+                        "assets/images/logo.png",
+                        scale: 4,
                       ),
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text("Masukkan nomor telepon Anda", style: TextStyle(
+                        fontWeight: FontWeight.bold
+                    ),),
+                  ),
+                  Text("untuk melanjutkan."),
+                  Form(
+                    key: _formKey,
+                    child: TextFormField(
+                      controller: _phoneNumberField,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: <TextInputFormatter>[
+                        WhitelistingTextInputFormatter.digitsOnly
+                      ], // Only numbers can be entered
+                    ),
                   )
+                ],
               ),
-              TextField(
-                keyboardType: TextInputType.number,
-                inputFormatters: <TextInputFormatter>[
-                  WhitelistingTextInputFormatter.digitsOnly
-                ], // Only numbers can be entered
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 223),
-                child: Text(
-                  "Dengan mendaftar, \nsaya akan menerima Syarat dan Ketentuan Pengguna yang berlaku di Motordoc.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 11,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 11),
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(7.0),
-                  ),
-                  color: Color(0xFF3688DE),
-                  textColor: Colors.white,
-                  padding: EdgeInsets.only(right: 115, left: 115, top: 9, bottom: 9),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                            builder: (context)=> OtpPage()
-                        )
-                    );
-                  },
-                  child: const Text(
-                      'VERIFIKASI',
-                      style: TextStyle()
-                  ),
-                ),
-              )
-            ],
+            ),
+          ),
         ),
+        bottomNavigationBar: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                  "Dengan mendaftar, saya menerima Syarat dan Ketentuan yang berlaku di Motordoc."),
+            ),
+            MyButton.primary(caption: "Verifikasi", onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => OtpPage()
+                  )
+              );
+            },
+              buttonWidth: double.infinity,),
+          ],
       )
     );
   }
+
 }

@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+
 import 'home/bottom_nav.dart';
 
 
 class RegistPage extends StatefulWidget{
   @override
-  _RegistPageState createState() => _RegistPageState();
+  createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegistPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: Text("Halo"),
+      ),
+    );
+  }
 }
 
 class _RegistPageState extends State<RegistPage>{

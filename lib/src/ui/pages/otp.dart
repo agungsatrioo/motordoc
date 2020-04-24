@@ -3,10 +3,91 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:motordoc/src/ui/pages/login/login.dart';
 import 'package:motordoc/src/ui/pages/register.dart';
+import 'package:motordoc/src/ui/widgets/widget_button.dart';
 
 class OtpPage extends StatefulWidget{
+  @override createState() => _OTPPageState();
+}
+
+class _OTPPageState extends State<OtpPage> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _otpNumberField = TextEditingController();
+
   @override
-  _OtpPageState createState() => _OtpPageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: Center(
+                      child: Image.asset(
+                        "assets/images/logo.png",
+                        scale: 4,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text("Masukkan kode verifikasi", style: TextStyle(
+                        fontWeight: FontWeight.bold
+                    ),),
+                  ),
+                  Text("yang telah dikirim via SMS ke +62 8xxxxxxxxxx."),
+                  Form(
+                    key: _formKey,
+                    child: TextFormField(
+                      controller: _otpNumberField,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: <TextInputFormatter>[
+                        WhitelistingTextInputFormatter.digitsOnly
+                      ], // Only numbers can be entered
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Center(
+                        child: new MyButton.link(
+                            caption: "Ganti nomor?", onTap: () {
+                          Navigator.of(context).pop();
+                        })
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        bottomNavigationBar: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            MyButton.flatPrimary(caption: "Kirim ulang OTP",
+              onTap: () {
+
+              },
+              buttonWidth: double.infinity,
+            ),
+            MyButton.primary(caption: "Konfirmasi",
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => RegistPage()
+                    )
+                );
+              },
+              buttonWidth: double.infinity,
+            ),
+          ],
+        )
+    );
+  }
+
 }
 
 class _OtpPageState extends State<OtpPage>{
