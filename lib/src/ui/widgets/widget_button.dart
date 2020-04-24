@@ -151,7 +151,7 @@ class MyButton extends StatelessWidget {
     }
 
     return Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
         child: SingleChildBooleanWidget(
             boolean: _isLink,
             ifTrue: RichText(
@@ -168,6 +168,8 @@ class MyButton extends StatelessWidget {
               minWidth: buttonWidth,
               height: buttonHeight,
               child: _buttonShape,
-            )));
+            )
+        )
+    );
   }
 }
