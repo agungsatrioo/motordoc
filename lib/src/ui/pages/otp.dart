@@ -53,6 +53,16 @@ class _OTPPageState extends State<OtpPage> {
                     padding: const EdgeInsets.only(top: 20),
                     child: Center(
                         child: new MyButton.link(
+                            caption: "KIRIM ULANG OTP", onTap: () {
+                          Navigator.of(context).pop();
+                        })
+                    ),
+                  ),
+                  Center(child: Text("Anda akan menerima SMS.")),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Center(
+                        child: new MyButton.link(
                             caption: "Ganti nomor?", onTap: () {
                           Navigator.of(context).pop();
                         })
@@ -67,12 +77,6 @@ class _OTPPageState extends State<OtpPage> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            MyButton.flatPrimary(caption: "Kirim ulang OTP",
-              onTap: () {
-
-              },
-              buttonWidth: double.infinity,
-            ),
             MyButton.primary(caption: "Konfirmasi",
               onTap: () {
                 Navigator.of(context).push(
