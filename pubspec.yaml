@@ -53,6 +53,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+dependency_overrides:
+  collection: ^1.14.12
+
 flutter_icons:
   android: "launcher_icon"
   ios: true

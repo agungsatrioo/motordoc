@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'file:///G:/KERJAPRAKTEK/Flutter/motordoc/lib/src/ui/pages/home/bottom_nav.dart';
+import 'home/bottom_nav.dart';
 
 
 class RegistPage extends StatefulWidget{
