@@ -9,10 +9,22 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          "Chat Page",
-        ),
+      appBar: AppBar(
+        
+      ),
+      body: Container(
+        
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (ctx,int){
+              return Card(
+                child: ListTile(
+                  title: Text('Motivation $int'),
+                  subtitle: Text('this is a description of the motivation')),
+                );
+              },
+            ),
+          
       ),
     );
   }

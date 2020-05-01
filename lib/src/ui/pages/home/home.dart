@@ -88,7 +88,6 @@ class _HomePageState extends State<HomePage>{
                               padding: const EdgeInsets.only(top: 14, right: 23.0, left: 12.0),
                               child: Image.asset(
                                 "assets/images/mechanic.png",
-//                          width: 99.0,
                                 height: 115.0,
                               ),
                             ),
@@ -149,7 +148,6 @@ class _HomePageState extends State<HomePage>{
                         topLeft: const Radius.circular(7.0),
                         topRight: const Radius.circular(7.0))
                   ),
-//                  padding: const EdgeInsets.only(top: 11, left: 18),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
@@ -157,7 +155,23 @@ class _HomePageState extends State<HomePage>{
                         'Headline',
                         style: TextStyle(fontSize: 18),
                       ),
-                      Expanded(
+                      Container(
+                        height: 75,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 15,
+                          itemBuilder: (BuildContext context, int index) => Card(
+                            child: Center(child: Text('Dummy Card Text')),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Headline Mid',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      Container(
+                        height: 75,
                         child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,

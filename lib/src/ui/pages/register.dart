@@ -10,18 +10,7 @@ class RegistPage extends StatefulWidget{
   createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegistPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Text("Halo"),
-      ),
-    );
-  }
-}
-
-class _RegistPageState extends State<RegistPage>{
+class _RegisterPageState extends State<RegistPage>{
   @override
   Widget build(BuildContext context){
     return Scaffold(

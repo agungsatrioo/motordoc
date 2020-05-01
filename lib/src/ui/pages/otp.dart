@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:motordoc/src/ui/pages/home/bottom_nav.dart';
+import 'package:motordoc/src/ui/pages/home/home.dart';
 import 'package:motordoc/src/ui/pages/login/login.dart';
 import 'package:motordoc/src/ui/pages/register.dart';
 import 'package:motordoc/src/ui/widgets/widget_button.dart';
@@ -211,7 +213,7 @@ class _OtpPageState extends State<OtpPage>{
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                            builder: (context)=> RegistPage()
+                            builder: (context)=> BottomNav()
                         )
                     );
                   },

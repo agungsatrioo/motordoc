@@ -60,9 +60,13 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
-                  "Dengan mendaftar, saya menerima Syarat dan Ketentuan yang berlaku di Motordoc."),
+                  "Dengan mendaftar, saya menerima Syarat dan Ketentuan yang berlaku di Motordoc.",
+                  textAlign: TextAlign.center,
+                  ),
             ),
-            MyButton.primary(caption: "Verifikasi", onTap: () {
+            MyButton.primary(
+              
+              caption: "Verifikasi", onTap: () {
               Navigator.of(context).push(
                   MaterialPageRoute(
                       builder: (context) => OtpPage()
