@@ -10,11 +10,15 @@ class MyButton extends StatelessWidget {
   Function() onTap;
   Color buttonColor;
   Color textColor;
+
   double fontSize = 16.0;
   double buttonWidth = 88.0;
   double buttonHeight = 48.0;
+
   int _buttonType;
   bool _isOutline = false, _isLink = false;
+
+  final ShapeBorder shape = RoundedRectangleBorder(borderRadius: new BorderRadius.circular(12.0));
 
   static const _BUTTON_TYPE_ERROR = 1;
   static const _BUTTON_TYPE_PRIMARY = 2;
@@ -132,6 +136,7 @@ class MyButton extends StatelessWidget {
 
     if (_isOutline) {
       _buttonShape = OutlineButton(
+        shape: shape,
         color: buttonColor,
         highlightedBorderColor: buttonColor,
         borderSide: BorderSide(color: buttonColor),
@@ -141,6 +146,7 @@ class MyButton extends StatelessWidget {
       );
     } else {
       _buttonShape = FlatButton(
+        shape: shape,
         color: buttonColor,
         child: Text(caption,
             style: TextStyle(

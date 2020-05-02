@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:motordoc/src/ui/pages/home/home.dart';
 import 'package:motordoc/src/ui/pages/home/chat.dart';
 import 'package:motordoc/src/ui/pages/home/person.dart';
+import 'package:motordoc/src/utils/util_theme.dart';
 
 class BottomNav extends StatefulWidget {
   @override
@@ -44,7 +45,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
         ],
         currentIndex: _selectedIndex,
-        backgroundColor: Color(0xFF3688DE),
+        backgroundColor: primary_logo,
         unselectedItemColor: Colors.white,
         selectedItemColor: Colors.white,
         iconSize: 30,

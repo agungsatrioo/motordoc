@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:motordoc/src/ui/widgets/widget_button.dart';
 
 import 'home/bottom_nav.dart';
 
@@ -76,33 +77,18 @@ class _RegisterPageState extends State<RegistPage>{
               TextField(
                 keyboardType: TextInputType.text,
               ),
-
-              Padding(
-                padding: EdgeInsets.only(top: 140),
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(7.0),
-                  ),
-                  color: Color(0xFF3688DE),
-                  textColor: Colors.white,
-                  padding: EdgeInsets.only(right: 115, left: 115, top: 9, bottom: 9),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                            builder: (context)=> BottomNav()
-                        )
-                    );
-                  },
-                  child: const Text(
-                      'SIMPAN',
-                      style: TextStyle()
-                  ),
-                ),
-              )
             ],
           ),
-        )
-
+        ),
+        bottomNavigationBar: MyButton.primary(
+              caption: "Simpan", onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => BottomNav()
+                  )
+              );
+            },
+              buttonWidth: double.infinity,),
     );
   }
 }

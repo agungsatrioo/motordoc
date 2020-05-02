@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:motordoc/src/ui/pages/otp.dart';
-import 'package:motordoc/src/ui/widgets/widget_button.dart';
+import '../../widgets/widget_button.dart';
+import '../../pages/otp.dart';
 
 class LoginPage extends StatefulWidget{
   @override createState() => _LoginPageState();
@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: Text(
                   "Dengan mendaftar, saya menerima Syarat dan Ketentuan yang berlaku di Motordoc.",
                   textAlign: TextAlign.center,
@@ -78,5 +78,4 @@ class _LoginPageState extends State<LoginPage> {
       )
     );
   }
-
 }

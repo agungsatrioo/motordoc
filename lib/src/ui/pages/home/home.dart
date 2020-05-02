@@ -1,60 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:motordoc/src/ui/widgets/widget_brand.dart';
+import 'package:motordoc/src/ui/widgets/widget_date.dart';
+import 'package:motordoc/src/ui/widgets/widget_location.dart';
+import 'package:motordoc/src/utils/util_theme.dart';
 
 class HomePage extends StatefulWidget{
-  @override
-  _HomePageState createState() => _HomePageState();
+  @override createState() => _MyHomePage();
 }
 
-class _HomePageState extends State<HomePage>{
-
+class _MyHomePage extends State<HomePage>{
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color (0xFF3688DE),
-        resizeToAvoidBottomPadding: false,
-        body: Column(
-            children: <Widget>[
-              Container(
-                  padding: const EdgeInsets.only(right: 20, left: 20, top: 32),
-                  child: Column(
+      backgroundColor: primary_logo,
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Container(
+          child: Column(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Image.asset(
-                            "assets/images/logo.png",
-                            width : 40.0,
-                            height: 40.0,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 5, right: 70),
-                            child: Text(
-                              "MOTORDOC",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Color (0xFFFFFFFF),
-                              ),
-                            ),
-                          ),
-                          Icon(
-                            Icons.location_on,
-                            size: 18,
-                            color: Color (0xFFFFFFFF),
-                          ),
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              "Lemahsugih, Bandung",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Color (0xFFFFFFFF),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
+                      MotordocLogo(),
+                      WidgetLocation()
+                    ],
+                  ),
+                  Container(
                         decoration: BoxDecoration(
                           borderRadius: new BorderRadius.circular(7.0),
                           color: Color (0xFFFFFFFF),
@@ -64,7 +41,7 @@ class _HomePageState extends State<HomePage>{
                         child: Row(
                             children:<Widget>[
                               Padding(
-                                padding: const EdgeInsets.all(2.0),
+                                padding: const EdgeInsets.symmetric(horizontal:8.0, vertical:2.0),
                                 child: Icon(
                                   Icons.search,
                                 ),
@@ -81,8 +58,7 @@ class _HomePageState extends State<HomePage>{
                             ]
                         ),
                       ),
-                      Container(
-                        child: Row(
+                      Row(
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(top: 14, right: 23.0, left: 12.0),
@@ -92,30 +68,17 @@ class _HomePageState extends State<HomePage>{
                               ),
                             ),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    "Sabtu, 4 April 2020",
-                                    style: TextStyle(
-                                      color: Color(0xFFFFFFFF),
-                                      fontSize: 12.0,
-                                      fontWeight: FontWeight.w100,
-                                    ),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                ),
+                                DateWidget(),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 5.0),
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      "Hai nama",
-                                      style: TextStyle(
-                                        color: Color(0xFFFFFFFF),
-                                        fontSize: 30.0,
-                                        fontWeight: FontWeight.w100,
-                                      ),
+                                  child: Text(
+                                    "Hai Rifqi Sambas",
+                                    style: TextStyle(
+                                      color: Color(0xFFFFFFFF),
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.w100,
                                     ),
                                   ),
                                 ),
@@ -134,11 +97,10 @@ class _HomePageState extends State<HomePage>{
                             )
                           ],
                         ),
-                      ),
-                    ],
-                  ),
+                ],
               ),
-              Expanded(
+            ),
+            Expanded(
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
@@ -201,8 +163,10 @@ class _HomePageState extends State<HomePage>{
                   ),
                 ),
               ),
-            ],
+          ],
           ),
+        )
+      )
     );
   }
 }
