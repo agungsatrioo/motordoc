@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:motordoc/src/ui/pages/login/login.dart';
-
+import 'package:motordoc/src/utils/util_theme.dart';
 
 
 class SplashScreen extends StatefulWidget{
@@ -19,7 +19,7 @@ class _SplashScreen extends State<SplashScreen>{
     startSplashScreen();
   }
 
-  startSplashScreen()async{
+  startSplashScreen() async{
     var duration = const Duration(seconds: 5);
     return Timer(duration, (){
       Navigator.of(context).pushReplacement(
@@ -31,54 +31,37 @@ class _SplashScreen extends State<SplashScreen>{
   }
 
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor : Color(0xFF3688DE),
-      body: Center(
-        child: Column(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: 203,left: 67, right: 67),
-            child: Image.asset(
-              "assets/images/logo.png",
-              width : 250.0,
-              height: 250.0,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 12.0),
-            child: Text(
-              "MOTORDOC",
-              style: TextStyle(
-                fontSize:36.0,
-                fontWeight: FontWeight.normal,
-                color: Color(0xFFFFFFFF),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 140),
-            child: Text(
-              "V 1.0",
-                style: TextStyle(
-                  fontSize: 10,
-                  color: Color(0xFFFFFFFF),
+      backgroundColor: primary_logo,
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Image.asset("assets/images/logo.png",scale: 3),
+              SizedBox(height: 10,),
+              Text("MotorDoc", 
+              style: Theme.of(context).textTheme.display1.merge(TextStyle(color: Theme.of(context).colorScheme.onPrimary)),
               )
-            ),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 1),
-            child: Text(
-                "Developed by Group 1 PPL",
-                style: TextStyle(
-                  fontSize: 10,
-                  color: Color(0xFFFFFFFF),
-                )
-            ),
-          ),
-        ],
-        ),
+        )
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text("Kelompok 1 PPL", 
+              style: Theme.of(context).textTheme.subhead.merge(TextStyle(color: Theme.of(context).colorScheme.onPrimary)),
+              )
+          ],
+        )
       ),
     );
   }
+
+
 }

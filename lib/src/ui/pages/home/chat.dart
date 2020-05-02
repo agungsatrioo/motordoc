@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motordoc/src/ui/widgets/widget_chat.dart';
 
 class ChatPage extends StatefulWidget {
   @override
@@ -9,22 +10,14 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        
-      ),
-      body: Container(
-        
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemBuilder: (ctx,int){
-              return Card(
-                child: ListTile(
-                  title: Text('Motivation $int'),
-                  subtitle: Text('this is a description of the motivation')),
-                );
-              },
-            ),
-          
+      body: SafeArea(
+          child: Container(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: 5,
+              itemBuilder: (ctx,int) => ChatListItem()
+              ),
+        ),
       ),
     );
   }
