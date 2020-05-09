@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:motordoc/src/ui/widgets/widget_button.dart';
 
+import '../widgets/widget_button.dart';
 import 'home/bottom_nav.dart';
 
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:motordoc/src/ui/pages/home/bottom_nav.dart';
-import 'package:motordoc/src/ui/pages/home/home.dart';
-import 'package:motordoc/src/ui/pages/login/login.dart';
-import 'package:motordoc/src/ui/pages/register.dart';
-import 'package:motordoc/src/ui/widgets/widget_button.dart';
+
+import '../widgets/widget_button.dart';
+import 'home/bottom_nav.dart';
+import 'login/login.dart';
+import 'register.dart';
 
 class OtpPage extends StatefulWidget{
   @override createState() => _OTPPageState();

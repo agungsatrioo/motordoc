@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:motordoc/src/ui/widgets/widget_chat.dart';
+
+import '../../widgets/widget_chat.dart';
 
 class ChatPage extends StatefulWidget {
   @override

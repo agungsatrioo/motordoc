@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:motordoc/src/ui/pages/login/login.dart';
-import 'package:motordoc/src/ui/widgets/widget_button.dart';
+
+import '../../widgets/widget_button.dart';
+import '../login/login.dart';
 
 class PersonPage extends StatefulWidget {
   @override

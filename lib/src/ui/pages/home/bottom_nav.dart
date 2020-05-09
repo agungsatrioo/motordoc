@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:motordoc/src/ui/pages/home/home.dart';
-import 'package:motordoc/src/ui/pages/home/chat.dart';
-import 'package:motordoc/src/ui/pages/home/person.dart';
-import 'package:motordoc/src/utils/util_theme.dart';
+
+import '../../../utils/util_theme.dart';
+import 'chat.dart';
+import 'home.dart';
+import 'person.dart';
 
 class BottomNav extends StatefulWidget {
   @override

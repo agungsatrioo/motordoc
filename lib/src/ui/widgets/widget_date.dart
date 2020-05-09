@@ -10,6 +10,7 @@ class DateWidget extends StatelessWidget {
         Stream<DateTime>.periodic(const Duration(seconds: 1), (count) {
       return now.add(Duration(seconds: count));
     });
+    
     return StreamBuilder<DateTime>(
       stream: clock,
       builder: (context, snapshot) {

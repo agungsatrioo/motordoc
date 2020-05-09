@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:motordoc/src/ui/widgets/widget_brand.dart';
-import 'package:motordoc/src/ui/widgets/widget_date.dart';
-import 'package:motordoc/src/ui/widgets/widget_location.dart';
-import 'package:motordoc/src/utils/util_theme.dart';
+
+import '../../../utils/util_theme.dart';
+import '../../widgets/widget_brand.dart';
+import '../../widgets/widget_date.dart';
+import '../../widgets/widget_location.dart';
 
 class HomePage extends StatefulWidget{
   @override createState() => _HomePageState();

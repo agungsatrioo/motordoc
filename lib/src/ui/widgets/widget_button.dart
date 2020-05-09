@@ -3,7 +3,8 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:motordoc/src/ui/widgets/widget_boolean.dart';
+
+import 'widget_boolean.dart';
 
 class MyButton extends StatelessWidget {
   String caption;
