@@ -82,7 +82,7 @@ class _RegisterPageState extends State<RegistPage>{
         ),
         bottomNavigationBar: MyButton.primary(
               caption: "Simpan", onTap: () {
-              Navigator.of(context).push(
+              Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                       builder: (context) => BottomNav()
                   )

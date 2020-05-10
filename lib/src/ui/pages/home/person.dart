@@ -60,7 +60,7 @@ class _PersonPageState extends State<PersonPage> {
                   caption: "LOG OUT", 
                   trailing: Icon(LineIcons.arrow_right),
                   onTap: () {
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                           builder: (context) => LoginPage()
                       )

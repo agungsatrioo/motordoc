@@ -81,7 +81,7 @@ class _OTPPageState extends State<OtpPage> {
           children: <Widget>[
             MyButton.primary(caption: "Konfirmasi",
               onTap: () {
-                Navigator.of(context).push(
+                Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                         builder: (context) => RegistPage()
                     )
