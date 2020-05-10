@@ -23,8 +23,9 @@ class UserRepository {
     @required String password,
   }) async {
     return _userAgent
-        .loginDummy(username: "Rifqi") //pake login dummy dulu
+        .loginDummy(username: username) //pake login dummy dulu
         .then((response) async {
+          print(response);
       return User.fromRawJson(response['data']);
     });
   }

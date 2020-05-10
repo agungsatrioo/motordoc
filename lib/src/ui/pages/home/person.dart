@@ -3,16 +3,38 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:motordoc/src/utils/blocs/auth/util_auth_bloc.dart';
 import 'package:motordoc/src/utils/blocs/auth/util_auth_event.dart';
+import 'package:motordoc/src/utils/util_user_agent.dart';
 
 import '../../widgets/widget_button.dart';
 import '../login/login.dart';
 
 class PersonPage extends StatefulWidget {
+   UserAgent userAgent;
+
+  PersonPage({@required this.userAgent});
+
   @override
   _PersonPageState createState() => _PersonPageState();
 }
 
 class _PersonPageState extends State<PersonPage> {
+  String name = "";
+
+  getName() {
+    widget.userAgent.user.then((val) {
+      print(val);
+      setState(() {
+        name = val.userId;
+      });
+    });
+  }
+
+  @override
+  initState(){
+    super.initState();
+    getName();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +62,7 @@ class _PersonPageState extends State<PersonPage> {
               Padding(
                 padding: const EdgeInsets.only(top: 30),
                 child: Text(
-                  "Rifqi Sambas",
+                  name,
                   style:TextStyle(
                     fontSize: 24,
                     color: Color(0xFF3688DE),

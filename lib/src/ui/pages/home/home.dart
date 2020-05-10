@@ -1,17 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:line_icons/line_icons.dart';
 
 import '../../../utils/util_theme.dart';
+import '../../../utils/util_user_agent.dart';
 import '../../widgets/widget_brand.dart';
 import '../../widgets/widget_date.dart';
 import '../../widgets/widget_location.dart';
 
 class HomePage extends StatefulWidget{
+  UserAgent userAgent;
+
+  HomePage({@required this.userAgent});
+
   @override createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  String name = "";
+
+  getName() {
+    widget.userAgent.user.then((val) {
+      print(val);
+      setState(() {
+        name = val.userId;
+      });
+    });
+  }
+
+  @override
+  initState(){
+    super.initState();
+    getName();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                               Padding(
                                 padding: const EdgeInsets.only(top: 5.0),
                                 child: Text(
-                                  "Hai Rifqi Sambas",
+                                  "Hai, $name",
                                   style: TextStyle(
                                     color: Color(0xFFFFFFFF),
                                     fontSize: 30.0,
@@ -165,16 +188,11 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (ctx,int) {
                         return Material(
                           child: InkWell(
-                            child: Container(
-                            padding: EdgeInsets.symmetric(horizontal:8.0, vertical:4.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Motivation ${int+1}", style: Theme.of(context).textTheme.title,),
-                                Text("Lorem ipsum ajaah", style: Theme.of(context).textTheme.subtitle,)
-                              ]
+                            child: ListTile(
+                              title: Text("Fakta Mengejutkan $int"),
+                              subtitle: Text("Fakta Mengejutkan $int"),
+                              trailing: Icon(LineIcons.long_arrow_right),
                             ),
-                          ),
                           onTap: () => {}
                           ),
                         );

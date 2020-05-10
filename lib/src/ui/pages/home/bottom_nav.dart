@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/util_theme.dart';
+import '../../../utils/util_user_agent.dart';
 import 'chat.dart';
 import 'home.dart';
 import 'person.dart';
@@ -11,12 +12,9 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
+  UserAgent _ua = UserAgent();
+  
   int _selectedIndex = 1;
-  final _widgetOptions = [
-    ChatPage(),
-    HomePage(),
-    PersonPage(),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -24,10 +22,22 @@ class _BottomNavState extends State<BottomNav> {
     });
   }
 
+  initState() {
+    super.initState();
+  }
+
+  Widget getPage() {
+    switch(_selectedIndex) {
+      case 0: return ChatPage();
+      case 1: return HomePage(userAgent: _ua,);
+      case 2: return PersonPage(userAgent: _ua);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _widgetOptions.elementAt(_selectedIndex),
+      body: getPage(),
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
