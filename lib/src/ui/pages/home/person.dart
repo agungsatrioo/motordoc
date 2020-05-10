@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:motordoc/src/utils/blocs/auth/util_auth_bloc.dart';
+import 'package:motordoc/src/utils/blocs/auth/util_auth_event.dart';
 
 import '../../widgets/widget_button.dart';
 import '../login/login.dart';
@@ -60,11 +63,8 @@ class _PersonPageState extends State<PersonPage> {
                   caption: "LOG OUT", 
                   trailing: Icon(LineIcons.arrow_right),
                   onTap: () {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                          builder: (context) => LoginPage()
-                      )
-                  );
+                   BlocProvider.of<AuthenticationBloc>(context)
+                        .add(LoggedOut());
                 },
               buttonWidth: double.infinity,
                 ),

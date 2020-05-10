@@ -5,7 +5,6 @@ import 'package:flutter/widgets.dart';
 import '../widgets/widget_button.dart';
 import 'home/bottom_nav.dart';
 
-
 class RegistPage extends StatefulWidget{
   @override
   createState() => _RegisterPageState();
@@ -19,7 +18,6 @@ class _RegisterPageState extends State<RegistPage>{
         body: Container(
           padding: const EdgeInsets.only(right: 38, left: 38),
           child: Column(
-
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(top: 109),

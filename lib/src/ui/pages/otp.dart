@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:motordoc/src/ui/pages/register/page_register_bloc.dart';
+import 'package:motordoc/src/utils/util_user_repository.dart';
 
 import '../widgets/widget_button.dart';
 import 'login/login.dart';
@@ -13,6 +15,7 @@ class OtpPage extends StatefulWidget{
 class _OTPPageState extends State<OtpPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _otpNumberField = TextEditingController();
+  UserRepository userRepository = UserRepository();
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +89,7 @@ class _OTPPageState extends State<OtpPage> {
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                        builder: (context) => RegistPage()
+                        builder: (context) => RegisterPageBloc(userRepository: userRepository)
                     )
                 );
               },
