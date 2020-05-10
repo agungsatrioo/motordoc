@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import '../widgets/widget_button.dart';
-import 'home/bottom_nav.dart';
 import 'login/login.dart';
 import 'register.dart';
 
