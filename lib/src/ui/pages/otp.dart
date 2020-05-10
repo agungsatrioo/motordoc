@@ -66,7 +66,11 @@ class _OTPPageState extends State<OtpPage> {
                     child: Center(
                         child: new MyButton.link(
                             caption: "Ganti nomor?", onTap: () {
-                          Navigator.of(context).pop();
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()
+                              )
+                          );
                         })
                     ),
                   ),
