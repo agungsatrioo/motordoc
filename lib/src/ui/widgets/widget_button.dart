@@ -12,6 +12,8 @@ class MyButton extends StatelessWidget {
   Color buttonColor;
   Color textColor;
 
+  Widget leading, trailing;
+
   double fontSize = 16.0;
   double buttonWidth = 88.0;
   double buttonHeight = 48.0;
@@ -35,6 +37,8 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._buttonType = 1;
   }
@@ -43,6 +47,8 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._isLink = true;
   }
@@ -51,6 +57,8 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._buttonType = 2;
   }
@@ -59,6 +67,8 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._buttonType = 3;
   }
@@ -67,6 +77,8 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._buttonType = 4;
     this._isOutline = true;
@@ -76,6 +88,8 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._buttonType = 5;
     this._isOutline = true;
@@ -85,6 +99,8 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._buttonType = 6;
     this._isOutline = true;
@@ -94,9 +110,27 @@ class MyButton extends StatelessWidget {
       {@required this.caption,
       this.buttonWidth = 88.0,
       this.buttonHeight = 48.0,
+      this.leading,
+      this.trailing,
       @required this.onTap}) {
     this._buttonType = 7;
     this._isOutline = true;
+  }
+
+  Widget _buildLeading() {
+    if(leading != null) return Padding(
+      padding: const EdgeInsets.symmetric(horizontal:8.0),
+      child: trailing,
+    );
+    else return Container();
+  }
+
+  Widget _buildTrailing() {
+    if(trailing != null) return Padding(
+      padding: const EdgeInsets.symmetric(horizontal:8.0),
+      child: trailing,
+    );
+    else return Container();
   }
 
   @override
@@ -141,18 +175,36 @@ class MyButton extends StatelessWidget {
         color: buttonColor,
         highlightedBorderColor: buttonColor,
         borderSide: BorderSide(color: buttonColor),
-        child: Text(caption,
-            style: TextStyle(fontSize: fontSize, color: textColor)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _buildLeading(),
+            Text(caption,
+            style: TextStyle(
+                fontSize: fontSize,
+                color: textColor ?? appTheme.colorScheme.onPrimary)
+            ),
+           _buildTrailing()
+          ],
+        ),
         onPressed: onTap,
       );
     } else {
       _buttonShape = FlatButton(
         shape: shape,
         color: buttonColor,
-        child: Text(caption,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _buildLeading(),
+            Text(caption,
             style: TextStyle(
                 fontSize: fontSize,
-                color: textColor ?? appTheme.colorScheme.onPrimary)),
+                color: textColor ?? appTheme.colorScheme.onPrimary)
+            ),
+           _buildTrailing()
+          ],
+        ),
         onPressed: onTap,
       );
     }

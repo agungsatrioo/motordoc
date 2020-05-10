@@ -88,7 +88,8 @@ class _RegisterPageState extends State<RegistPage>{
                   )
               );
             },
-              buttonWidth: double.infinity,),
+              buttonWidth: double.infinity,
+        ),
     );
   }
 }

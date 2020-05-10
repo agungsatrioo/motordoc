@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 import '../../widgets/widget_button.dart';
 import '../login/login.dart';
@@ -12,27 +13,15 @@ class _PersonPageState extends State<PersonPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text("PROFIL SAYA"),
+        centerTitle: true,
+      ),
       body: SafeArea( 
         child:Container(
           child : Column(
             children: <Widget>[
-              Container(
-                height: 55,
-                width: double.infinity,
-                color: Color(0xFF3688DE),
-                child: Padding(
-                  padding: EdgeInsets.only(top:15),
-                  child: Text(
-                    "PROFIL",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      // fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
               Container(
                   padding: const EdgeInsets.only(top: 50),
                   child:  CircleAvatar(
@@ -67,8 +56,10 @@ class _PersonPageState extends State<PersonPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 28),
-                child: MyButton.primary(
-                  caption: "LOG OUT", onTap: () {
+                child: MyButton.flatPrimary(
+                  caption: "LOG OUT", 
+                  trailing: Icon(LineIcons.arrow_right),
+                  onTap: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(
                           builder: (context) => LoginPage()
