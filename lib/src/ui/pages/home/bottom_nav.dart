@@ -31,6 +31,7 @@ class _BottomNavState extends State<BottomNav> {
       case 0: return ChatPage();
       case 1: return HomePage(userAgent: _ua,);
       case 2: return PersonPage(userAgent: _ua);
+      default: return ChatPage();
     }
   }
 
@@ -61,6 +62,7 @@ class _BottomNavState extends State<BottomNav> {
         selectedItemColor: Colors.white,
         iconSize: 30,
         onTap: _onItemTapped,
+        elevation: 0.0,
       ),
     );
   }

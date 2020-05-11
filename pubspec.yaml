@@ -50,6 +50,7 @@ dependencies:
   package_info: ^0.4.0+16
   antd: ^0.0.1
   flutter_slidable: ^0.5.4
+  animations: ^1.0.0+5
 
 dev_dependencies:
   flutter_test:

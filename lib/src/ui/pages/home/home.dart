@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:motordoc/src/ui/pages/examples/container_transform_demo.dart';
 
 import '../../../utils/util_theme.dart';
 import '../../../utils/util_user_agent.dart';
@@ -50,7 +51,16 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        MotordocLogo(),
+                        InkWell(
+                          child: MotordocLogo(),
+                          onTap: () {
+                            Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => OpenContainerTransformDemo()
+                                )
+                            );
+                          },
+                        ),
                         WidgetLocation()
                       ],
                     ),

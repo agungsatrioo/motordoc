@@ -3,14 +3,17 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ChatListItem extends StatelessWidget {
+  VoidCallback voidCallback;
+
+  ChatListItem({
+    @required this.voidCallback
+  });
+
   @override
   Widget build(BuildContext context) {
     return Slidable(
       actionPane: SlidableDrawerActionPane(),
-      child: Material(
-      child: InkWell(
-        child: Container(
-          child: ListTile(
+      child: ListTile(
             leading: CircleAvatar(
               backgroundImage: AssetImage("assets/images/logo.png")
             ),
@@ -20,12 +23,9 @@ class ChatListItem extends StatelessWidget {
               children: <Widget>[
                 Text("20:59")
               ],
-            )
-          )
-        ),
-        onTap: () {},
-      ),
-    ), 
+            ),
+            onTap: voidCallback,
+          ),
     secondaryActions: <Widget>[
       IconSlideAction(
         caption: 'Hapus',

@@ -1,4 +1,6 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:motordoc/src/ui/pages/examples/blank_page.dart';
 
 import '../../widgets/widget_chat.dart';
 
@@ -23,8 +25,21 @@ class _ChatPageState extends State<ChatPage> {
                 ListView.builder(
                   shrinkWrap: true,
                   itemCount: 5,
-                  itemBuilder: (ctx,int) => ChatListItem()
-                  ),
+                  itemBuilder: (ctx, index) {
+                    return OpenContainer(
+                      transitionType: ContainerTransitionType.fade,
+                      openBuilder: (BuildContext _, VoidCallback openContainer) {
+                        return BlankPage();
+                      },
+                      tappable: false,
+                      closedShape: const RoundedRectangleBorder(),
+                      closedElevation: 0.0,
+                      closedBuilder: (BuildContext _, VoidCallback openContainer) {
+                        return ChatListItem(voidCallback: openContainer);
+                      }
+                    );
+                  }
+                )
               ],
             )
         ),
