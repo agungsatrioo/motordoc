@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:motordoc/src/ui/pages/examples/container_transform_demo.dart';
+import 'package:motordoc/src/ui/widgets/widget_home_category_button.dart';
+import 'package:motordoc/src/ui/widgets/widget_homepage_wrapper.dart';
 
 import '../../../utils/util_theme.dart';
 import '../../../utils/util_user_agent.dart';
@@ -39,6 +41,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       body: CustomScrollView(
         slivers: <Widget> [
           SliverAppBar(
@@ -146,13 +149,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: new BorderRadius.only(
-                    topLeft: const Radius.circular(7.0),
-                    topRight: const Radius.circular(7.0))
-              ),
+            child: HomePageWrapper(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -160,17 +157,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text("Kategori", style: Theme.of(context).textTheme.subhead),
                   ),
-                  Container(
-                        height: 75,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 15,
-                          itemBuilder: (BuildContext context, int index) => Card(
-                            child: Center(child: Text('Dummy Card Text')),
-                          ),
-                        ),
-                      ),
+                  HomeCategoryButtonsWidget(),
                    Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text("Sparepart", style: Theme.of(context).textTheme.subhead),
