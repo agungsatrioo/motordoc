@@ -47,10 +47,16 @@ class _HomeCategoryButtonsItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                menuItem.caption,
+                DefaultTextStyle(
+                    style: TextStyle(color: Theme.of(context).primaryColor), child: menuItem.caption),
                 Align(
                   alignment: Alignment.bottomRight,
-                  child: menuItem.icon,
+                  child: Theme(
+                    data: ThemeData(
+                      iconTheme: IconThemeData(color: Theme.of(context).primaryColor)
+                    ),
+                    child: menuItem.icon,
+                  ),
                 )
               ],
             )),
