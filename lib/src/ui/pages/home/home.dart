@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:motordoc/src/models/model_home_category_menu.dart';
 import 'package:motordoc/src/ui/pages/examples/container_transform_demo.dart';
 import 'package:motordoc/src/ui/widgets/widget_home_category_button.dart';
 import 'package:motordoc/src/ui/widgets/widget_homepage_wrapper.dart';
@@ -37,6 +38,24 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     getName();
   }
+
+  get categoryList => [
+    HomeCategoryMenuItemModel(
+      caption: Text("Chat Montir"), 
+      icon: Icon(Icons.call_made), 
+      onClick: () {}
+    ),    
+    HomeCategoryMenuItemModel(
+      caption: Text("Forum"), 
+      icon: Icon(Icons.forum), 
+      onClick: () {}
+    ),
+    HomeCategoryMenuItemModel(
+      caption: Text("Beli Sparepart"), 
+      icon: Icon(Icons.shopping_cart), 
+      onClick: () {}
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -157,7 +176,9 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text("Kategori", style: Theme.of(context).textTheme.subhead),
                   ),
-                  HomeCategoryButtonsWidget(),
+                  HomeCategoryButtonsWidget(
+                    list: categoryList,
+                  ),
                    Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text("Sparepart", style: Theme.of(context).textTheme.subhead),
