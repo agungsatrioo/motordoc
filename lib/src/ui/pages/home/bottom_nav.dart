@@ -40,7 +40,6 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: getPage(),
       bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -53,7 +52,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text('Person'),
+            title: Text('Profile'),
           ),
         ],
         currentIndex: _selectedIndex,
