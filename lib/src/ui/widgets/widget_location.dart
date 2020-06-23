@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class WidgetLocation extends StatelessWidget {
+
+  const WidgetLocation();
+
   @override
   Widget build(BuildContext context) {
     return Row(

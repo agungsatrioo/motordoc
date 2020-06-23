@@ -1,6 +1,9 @@
 import 'package:flutter/widgets.dart';
 
 class MotordocLogo extends StatelessWidget {
+
+  const MotordocLogo();
+
   @override
   Widget build(BuildContext context) {
     return Row(

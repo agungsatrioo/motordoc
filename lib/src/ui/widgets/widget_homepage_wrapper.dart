@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HomePageWrapper extends StatelessWidget {
   final Widget child;
 
-  HomePageWrapper({Key key, @required this.child}) : super(key: key);
+  const HomePageWrapper({Key key, @required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

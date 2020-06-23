@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:motordoc/src/ui/widgets/home_menus/widget_spareparts.dart';
+import 'package:motordoc/src/ui/widgets/menus/widget_sparepart.dart';
 
 import '../../../models/model_home_category_menu.dart';
 import '../../../utils/util_theme.dart';
@@ -173,30 +175,23 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Kategori", style: Theme.of(context).textTheme.subhead),
+                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                    child: Text("Kategori", style: Theme.of(context).textTheme.subtitle2),
                   ),
                   HomeCategoryButtonsWidget(
                     list: categoryList,
                   ),
                    Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Sparepart", style: Theme.of(context).textTheme.subhead),
+                    padding: const EdgeInsets.fromLTRB(8, 32, 8, 8),
+                    child: Text("Sparepart untuk Anda", style: Theme.of(context).textTheme.subtitle2),
                   ),
                   Container(
-                        height: 75,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 15,
-                          itemBuilder: (BuildContext context, int index) => Card(
-                            child: Center(child: Text('Dummy Card Text')),
-                          ),
-                        ),
+                        height: 200,
+                        child: WidgetSpareparts()
                       ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Tahukah Kamu?", style: Theme.of(context).textTheme.subhead),
+                    padding: const EdgeInsets.fromLTRB(8, 32, 8, 8),
+                    child: Text("Tahukah Kamu?", style: Theme.of(context).textTheme.subtitle2),
                   ),
                   ListView.builder(
                     padding: EdgeInsets.zero,

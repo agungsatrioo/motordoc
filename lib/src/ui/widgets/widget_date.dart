@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 import '../../utils/util_date.dart';
 
 class DateWidget extends StatelessWidget {
+
+  const DateWidget();
+
   @override
   Widget build(BuildContext context) {
     final now = DateTime.now();

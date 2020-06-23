@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LoadingPage extends StatelessWidget {
+
+  const LoadingPage();
+
   @override
   Widget build(BuildContext context) => Scaffold(
         body: SafeArea(
@@ -10,6 +13,9 @@ class LoadingPage extends StatelessWidget {
 }
 
 class LoadingWidget extends StatelessWidget {
+
+  const LoadingWidget();
+
   @override
   Widget build(BuildContext context) => Center(
       child: Column(
