@@ -73,18 +73,30 @@ class ChatParticipant {
 }
 
 class MessageItem {
-    ChatParticipant chatParticipant;
+    String chatId;
+    ChatParticipant chatSender;
+    String picture;
+    String sound;
+    String file;
     String messageBody;
     DateTime timestamp;
+    bool removed;
     int urgency;
-    int status;
+    bool read;
+    MessageItem quote;
 
     MessageItem({
-        this.chatParticipant,
+        this.chatId,
+        this.chatSender,
+        this.picture,
+        this.sound,
+        this.file,
         this.messageBody,
         this.timestamp,
+        this.removed,
         this.urgency,
-        this.status,
+        this.read,
+        this.quote,
     });
 
     factory MessageItem.fromRawJson(String str) => MessageItem.fromJson(json.decode(str));
@@ -92,18 +104,30 @@ class MessageItem {
     String toRawJson() => json.encode(toJson());
 
     factory MessageItem.fromJson(Map<String, dynamic> json) => MessageItem(
-        chatParticipant: ChatParticipant.fromJson(json["chat_participant"]),
+        chatId: json["chat_id"],
+        chatSender: ChatParticipant.fromJson(json["chat_sender"]),
+        picture: json["picture"] == null ? null : json["picture"],
+        sound: json["sound"] == null ? null : json["sound"],
+        file: json["file"] == null ? null : json["file"],
         messageBody: json["message_body"],
         timestamp: DateTime.parse(json["timestamp"]),
+        removed: json["removed"],
         urgency: json["urgency"],
-        status: json["status"],
+        read: json["read"],
+        quote: json["quote"] == null ? null : MessageItem.fromJson(json["quote"]),
     );
 
     Map<String, dynamic> toJson() => {
-        "chat_participant": chatParticipant.toJson(),
+        "chat_id": chatId,
+        "chat_sender": chatSender.toJson(),
+        "picture": picture == null ? null : picture,
+        "sound": sound == null ? null : sound,
+        "file": file == null ? null : file,
         "message_body": messageBody,
         "timestamp": timestamp.toIso8601String(),
+        "removed": removed,
         "urgency": urgency,
-        "status": status,
+        "read": read,
+        "quote": quote == null ? null : quote.toJson(),
     };
 }

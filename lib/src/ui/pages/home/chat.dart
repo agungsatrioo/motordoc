@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:motordoc/src/ui/pages/chat/page_chatroom.dart';
 
 import '../../widgets/widget_chat.dart';
 import '../examples/blank_page.dart';
@@ -29,7 +30,7 @@ class _ChatPageState extends State<ChatPage> {
                     return OpenContainer(
                       transitionType: ContainerTransitionType.fade,
                       openBuilder: (BuildContext _, VoidCallback openContainer) {
-                        return BlankPage();
+                        return ChatroomPage();
                       },
                       tappable: false,
                       closedShape: const RoundedRectangleBorder(),
