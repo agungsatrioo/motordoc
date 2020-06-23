@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:motordoc/src/models/model_home_category_menu.dart';
-import 'package:motordoc/src/ui/pages/examples/container_transform_demo.dart';
-import 'package:motordoc/src/ui/widgets/widget_home_category_button.dart';
-import 'package:motordoc/src/ui/widgets/widget_homepage_wrapper.dart';
 
+import '../../../models/model_home_category_menu.dart';
 import '../../../utils/util_theme.dart';
 import '../../../utils/util_user_agent.dart';
 import '../../widgets/widget_brand.dart';
 import '../../widgets/widget_date.dart';
+import '../../widgets/widget_home_category_button.dart';
+import '../../widgets/widget_homepage_wrapper.dart';
 import '../../widgets/widget_location.dart';
+import '../examples/container_transform_demo.dart';
 
 class HomePage extends StatefulWidget{
   UserAgent userAgent;

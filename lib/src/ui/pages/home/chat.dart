@@ -1,8 +1,8 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:motordoc/src/ui/pages/examples/blank_page.dart';
 
 import '../../widgets/widget_chat.dart';
+import '../examples/blank_page.dart';
 
 class ChatPage extends StatefulWidget {
   @override

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import '../../widgets/widget_button.dart';
+
 import '../../pages/otp.dart';
+import '../../widgets/widget_button.dart';
 
 class LoginPage extends StatefulWidget{
   @override createState() => _LoginPageState();

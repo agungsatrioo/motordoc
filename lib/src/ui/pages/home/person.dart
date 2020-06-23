@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:motordoc/src/utils/blocs/auth/util_auth_bloc.dart';
-import 'package:motordoc/src/utils/blocs/auth/util_auth_event.dart';
-import 'package:motordoc/src/utils/util_user_agent.dart';
 
+import '../../../utils/blocs/auth/util_auth_bloc.dart';
+import '../../../utils/blocs/auth/util_auth_event.dart';
+import '../../../utils/util_user_agent.dart';
 import '../../widgets/widget_button.dart';
-import '../login/login.dart';
 
 class PersonPage extends StatefulWidget {
    UserAgent userAgent;
