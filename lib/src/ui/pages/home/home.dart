@@ -1,7 +1,10 @@
+// import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:motordoc/src/ui/pages/home/chat.dart';
 import 'package:motordoc/src/ui/widgets/home_menus/widget_spareparts.dart';
 import 'package:motordoc/src/ui/widgets/menus/widget_sparepart.dart';
 
@@ -45,12 +48,24 @@ class _HomePageState extends State<HomePage> {
     HomeCategoryMenuItemModel(
       caption: Text("Chat Montir"), 
       icon: Icon(Icons.call_made), 
-      onClick: () {}
+      onClick: () {
+        Navigator.push(
+          this.context,
+          MaterialPageRoute(builder: (context) => ChatPage()),
+        );
+      }
     ),    
     HomeCategoryMenuItemModel(
       caption: Text("Forum"), 
       icon: Icon(Icons.forum), 
-      onClick: () {}
+      onClick: () {
+        Navigator.push(
+          this.context,
+          MaterialPageRoute(
+            builder: (context) => OpenContainerTransformDemo()
+          )
+        );
+      }
     ),
     HomeCategoryMenuItemModel(
       caption: Text("Beli Sparepart"), 
@@ -98,33 +113,33 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.all(8.0),
               child: Column(
               children: <Widget>[
-                Container(
-                      decoration: BoxDecoration(
-                        borderRadius: new BorderRadius.circular(7.0),
-                        color: Color (0xFFFFFFFF),
-                      ),
-                      width: 360,
-                      height: 38,
-                      child: Row(
-                          children:<Widget>[
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal:8.0, vertical:2.0),
-                              child: Icon(
-                                Icons.search,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(7.0),
-                              child: Text(
-                                "Ada masalah apa dengan motormu?",
-                                style: TextStyle(
-                                  color: Color (0xFFC1C0C0),
-                                ),
-                              ),
-                            ),
-                          ]
-                      ),
-                    ),
+                // Container(
+                //       decoration: BoxDecoration(
+                //         borderRadius: new BorderRadius.circular(7.0),
+                //         color: Color (0xFFFFFFFF),
+                //       ),
+                //       width: 360,
+                //       height: 38,
+                //       child: Row(
+                //           children:<Widget>[
+                //             Padding(
+                //               padding: const EdgeInsets.symmetric(horizontal:8.0, vertical:2.0),
+                //               child: Icon(
+                //                 Icons.search,
+                //               ),
+                //             ),
+                //             Padding(
+                //               padding: const EdgeInsets.all(7.0),
+                //               child: Text(
+                //                 "Ada masalah apa dengan motormu?",
+                //                 style: TextStyle(
+                //                   color: Color (0xFFC1C0C0),
+                //                 ),
+                //               ),
+                //             ),
+                //           ]
+                //       ),
+                //     ),
                     Row(
                         children: <Widget>[
                           Padding(

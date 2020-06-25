@@ -57,7 +57,7 @@ class _OTPPageState extends State<OtpPage> {
                     child: Center(
                         child: new MyButton.link(
                             caption: "KIRIM ULANG OTP", onTap: () {
-                          Navigator.of(context).pop();
+                          
                         })
                     ),
                   ),

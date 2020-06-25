@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:motordoc/src/ui/pages/chat/page_chatroom.dart';
+import 'package:motordoc/src/ui/pages/home/home.dart';
 
 import '../../widgets/widget_chat.dart';
 import '../examples/blank_page.dart';
@@ -15,7 +16,6 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: Text("PESAN"),
         centerTitle: true,
       ),

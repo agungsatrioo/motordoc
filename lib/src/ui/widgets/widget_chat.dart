@@ -17,7 +17,7 @@ class ChatListItem extends StatelessWidget {
             leading: CircleAvatar(
               backgroundImage: AssetImage("assets/images/logo.png")
             ),
-            title: Text("Zanuar"),
+            title: Text("Montir"),
             subtitle: Text("Saya: ini tes doang"),
             trailing: Column(
               children: <Widget>[

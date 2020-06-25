@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
-
+import 'package:intl/intl.dart';
+// import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+// import 'package:intl/intl.dart';
 import '../../../utils/blocs/login/util_login_bloc.dart';
 import '../../../utils/blocs/login/util_login_event.dart';
 import '../../../utils/blocs/login/util_login_state.dart';
@@ -12,9 +14,14 @@ class RegisterForm extends StatefulWidget {
   State<RegisterForm> createState() => _RegisterFormState();
 }
 
+enum JenisKelamin { lakilaki, perempuan }
+
 class _RegisterFormState extends State<RegisterForm> {
+  JenisKelamin _character = null;
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  DateTime _dateTime = new DateTime.now();
+
     final _formKey = GlobalKey<FormState>();
   bool _obscureText = true, logout = false;
 
@@ -26,6 +33,7 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
+    String _formatDate = new DateFormat.yMMMd().format(_dateTime);
     _onLoginButtonPressed() {
       BlocProvider.of<LoginBloc>(context).add(
         LoginButtonPressed(
@@ -78,7 +86,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         keyboardType: TextInputType.text,
                           validator: (val) {
                           if (val.length < 1)
-                            return "Kolom ini jangan dikosongkan.";
+                            return "Harap isi kolom ini";
                           else
                             return null;
                         },
@@ -97,9 +105,36 @@ class _RegisterFormState extends State<RegisterForm> {
                           ),
                         ),
                       ),
-                      TextField(
-                        keyboardType: TextInputType.text,
-                      ),
+                      Row(children: <Widget>[
+                        Text(
+                          _dateTime == DateTime.now() ? "Pilih Tanggal Lahir" : "$_formatDate",
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            Icons.calendar_today,
+                          ),
+                          onPressed: (){
+                            showDatePicker(
+                              context: context, 
+                              initialDate: DateTime.now(), 
+                              firstDate: DateTime(1950), 
+                              lastDate: DateTime(2021)
+                            ).then((date) => {
+                              if (_formatDate!=null){
+                                setState((){
+                                  _formatDate == _formatDate;
+                                }
+                                )
+                              }
+                              else{
+                                setState((){
+                                _dateTime = date;
+                              })
+                              }
+                            }); 
+                          }
+                        ),
+                      ],),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
@@ -113,9 +148,36 @@ class _RegisterFormState extends State<RegisterForm> {
                           ),
                         ),
                       ),
-                      TextField(
-                        keyboardType: TextInputType.text,
-                      ),
+                      Row(
+                        children: <Widget>[
+                            Radio(
+                              value: JenisKelamin.lakilaki, 
+                              groupValue: _character, 
+                              onChanged: (JenisKelamin value){
+                                setState(() {
+                                  _character = value;
+                                });
+                              }),
+                          Text('Laki-Laki',
+                            style: TextStyle(
+                              fontSize: 14,
+                            ),
+                          ),
+                          Radio(
+                              value: JenisKelamin.perempuan, 
+                              groupValue: _character, 
+                              onChanged: (JenisKelamin value){
+                                setState(() {
+                                  _character = value;
+                                });
+                              }),
+                          Text('Perempuan',
+                            style: TextStyle(
+                              fontSize: 14,
+                            ),
+                          ),
+                      ],),
+                      
                     ],
                   ),
                 ),
@@ -140,3 +202,4 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 }
+
